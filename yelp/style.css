@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.link_homepage a {
+    text-decoration: none ;
+    color:white ;
+    margin-right: 32px;
+}
+
+.nav_form {
+    width: 100% ;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 7px;
+    
+}
+
+.nav_form_input_container {
+    width: 100%;
+    padding: 13px 16px;
+    display: flex;
+}
+
+.nav_form_input input{
+    border: none;
+ 
+}
+
+.nav_form_input{
+    width: 50%;
+}
+
+.search{
+    border: none ;
+    background-color: red;
+    color: white;
+    padding: 12px 16px ;
+    font-size: 18px;
+}
+
+.nav_select {
+    display: flex;
+    align-items: center;
+}
+
+.nav_select select{
+    background-color: transparent;
+    color:white ;
+    border:none;
+    padding:10px;
+}
+
+.nav_select_link a {
+    
+
+    padding: 10px;
+    text-decoration: none ;
+    color: white;
+}
+
+.nav_select_link:hover {
+    background-color: #fd0505f3;
+    color:red;
+}
+
+.nav_buttons button{
+    padding: 13px 16px ;
+
+}
+
+#accedi{
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+}
+#iscriviti {
+    background-color: red;
+    color: white;
+    border:2px solid red ;
+    border-radius: 5px;
+}
+#accedi:hover , #iscriviti:hover{
+    background-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,1);
+    box-shadow: none;
+}
+.form_container{
+    border-radius:7px ;
+    background-color: white;
+    flex-basis: 1000px;
+}
+
+.second_nav_list ul{
+    color: white;
+    display: flex;
+    list-style: none;
+
+}
+.second_nav_list li{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.fa-angle-down{
+    display: inline-block;
+    margin-left: 10px;
+    
+}
+
+.second_nav_list{
+    margin-left: 150px;
+    width: 100%;
+}
+
+.top_container{
+    background-image: url("https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/03aa48ca7ef1/assets/img/home/hero_photos/M0iX_vhAdaC9m2ew5TrQtA.jpg");
+    background-position: center;
+    background-size: cover;
+}

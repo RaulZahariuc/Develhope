@@ -1,0 +1,60 @@
+body {
+  width: 100%; /* Expand the body to the full width of the viewport */
+  display: flex;
+  flex-direction: row;  
+  align-items: center; 
+}
+
+section {
+  display: flex;
+  flex-direction: column; /* Display sections in columns */
+  align-items: center; /* Center the content horizontally within each section */
+  padding: 20px; /* Add custom padding in pixels for each section */
+  height: 650px;
+  margin: top 0%;
+}
+
+#green {
+  background-color: #8ffda7;
+  min-width: 100px; 
+  margin-right: auto; 
+}
+
+
+
+#orange {
+  background-color: #ffc788;
+  width: 350px;
+}
+
+#yellow {
+  background-color: #ffff92;
+  width: 150px;
+
+  margin-right: auto; 
+}
+
+#red {
+  background-color: #ff919c;
+  min-width: 180px; /* Custom minimum width for the red section */
+  margin-right: auto; 
+}
+
+#blue {
+  background-color: #98d2ff;
+  width: 75px; 
+  margin-right: 0; 
+  margin-left: auto;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  text-align: center; /* Center the list items horizontally within the sections */
+}
+
+li {
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+}

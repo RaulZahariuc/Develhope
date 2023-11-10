@@ -1,0 +1,134 @@
+
+* {
+    margin: 0%;
+    padding: 0%;
+  }
+  .container {
+    display: grid;
+    width: 300px;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 12px;
+    margin: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 10px;
+  }
+  
+  #input {
+    display: grid;
+    height: 50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    background-color: rgb(69, 75, 77);
+    color: white;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  #input h1 {
+    padding-top: 20px;
+    padding-right: 10px;
+    
+  }
+  
+  #numbers {
+    display: grid;
+    text-align: center;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    background-color: grey;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "piu meno per diviso"
+      "sette otto nove uguale"
+      "quattro cinque sei uguale"
+      "uno due tre uguale"
+      "zero punto AC uguale";
+  }
+  
+  #numbers > div {
+    border: 1px grey (95, 91, 91);
+    padding: 10px 0;
+  }
+  
+  #numbers > div:hover {
+    background-color: rgb(147, 147, 198);
+    color: white;
+  }
+  
+  #numbers > div:active {
+    color: red;
+  }
+  
+  .operators {
+    background-color: rgb(56, 56, 56);
+  }
+  
+  #piu {
+    grid-area: piu;
+  }
+  
+  #meno {
+    grid-area: meno;
+  }
+  #per {
+    grid-area: per;
+  }
+  #diviso {
+    grid-area: diviso;
+  }
+  #sette {
+    grid-area: sette;
+  }
+  #otto {
+    grid-area: otto;
+  }
+  #nove {
+    grid-area: nove;
+  }
+  
+  #quattro {
+    grid-area: quattro;
+  }
+  #cinque {
+    grid-area: cinque;
+  }
+  #sei {
+    grid-area: sei;
+  }
+  #uno {
+    grid-area: uno;
+  }
+  #due {
+    grid-area: due;
+  }
+  #tre {
+    grid-area: tre;
+  }
+  #zero {
+    grid-area: zero;
+    border-bottom-left-radius:10px;
+  }
+  #punto {
+    grid-area: punto;
+  }
+  #AC {
+    grid-area: AC;
+  }
+  #uguale {
+    background-color: red;
+    border-bottom-right-radius:10px;
+    grid-area: uguale;
+    margin: 0%;
+    padding: 0;
+  }
+  
+  #uguale h1 {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }

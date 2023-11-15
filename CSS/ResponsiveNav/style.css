@@ -1,97 +1,83 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none; 
+    list-style: none;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
 
-
-nav a{
+nav a {
     color: rgb(0, 0, 0);
 }
 
-nav{
+nav {
     background-color: #02022b;
     color: rgb(209, 0, 63);
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 40px;
     font-size: 20px;
 }
 
-
-
-.link{
+.link {
     display: flex;
     gap: 16px;
     cursor: pointer;
-    
 }
 
-
-
-.links a{
+.links a {
     color: rgb(160, 160, 160);
 }
 
-.links a:hover{
-color: aliceblue;
-transition: 0.5s;
+.links a:hover {
+    color: aliceblue;
+    transition: 0.5s;
 }
 
-
-.input input{
+.input input {
     padding: 5px;
     font-size: 20px;
     border-radius: 6px;
     margin-left: 0%;
-    
-   
 }
 
-.input button{
+.input button {
     padding: 5px;
     border: 1px solid rgb(209, 0, 63);
     border-radius: 6px;
     font-size: 20px;
     color: rgb(209, 0, 63);
     background-color: transparent;
-    
-    
 }
 
-.input button:hover{
- background-color: aliceblue;
- color: black;
- border-color: black;
- transition: 0.5s;
+.input button:hover {
+    background-color: aliceblue;
+    color: black;
+    border-color: black;
+    transition: 0.5s;
 }
 
-
-.kb-container{
+.kb-container {
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
 }
 
-.kebab{
+.kebab {
     width: 5px;
     height: 5px;
     background-color: rgb(255, 255, 255);
     position: relative;
     border-radius: 5px;
-   
-
 }
 
-.kebab::after, .kebab::before{
+.kebab::after,
+.kebab::before {
     width: 5px;
     height: 5px;
     background-color: rgb(241, 238, 238);
@@ -99,12 +85,27 @@ transition: 0.5s;
     border-radius: 5px;
 }
 
-.kebab::after{
+.kebab::after {
     content: "";
     top: -10px;
 }
 
-.kebab::before{
+.kebab::before {
     content: "";
     top: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .link {
+        display: none; 
+    }
+
+    .input {
+        display: none; 
+    }
+
+    .kebab {
+        display: block; 
+    }
 }

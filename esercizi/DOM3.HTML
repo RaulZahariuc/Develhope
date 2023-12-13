@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+</head>
+<body>
+
+  <h1>La Mia To-Do List</h1>
+
+  <div>
+    <input type="text" id="nuovoTask" placeholder="Inserisci il tuo task">
+    <button onclick="aggiungiTask()">Aggiungi</button>
+  </div>
+
+  <ul id="listaTasks"></ul>
+
+  <script>
+    function aggiungiTask() {
+     
+      var nuovoTaskInput = document.getElementById('nuovoTask');
+      var nuovoTaskValue = nuovoTaskInput.value;
+
+      
+      if (nuovoTaskValue.trim() !== '') {
+       
+        var nuovoElemento = document.createElement('li');
+
+        
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+
+        
+        nuovoElemento.appendChild(checkbox);
+        nuovoElemento.appendChild(document.createTextNode(nuovoTaskValue));
+
+       
+        var listaTasks = document.getElementById('listaTasks');
+        listaTasks.appendChild(nuovoElemento);
+
+       
+        nuovoTaskInput.value = '';
+      }
+    }
+  </script>
+</body>
+</html>

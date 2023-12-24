@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de "Il Signore degli Anelli"</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            max-width: 300px;
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" id="characterCard">
+        <h2>Nome del personaggio: <span id="characterName"></span></h2>
+        <img id="characterImage" alt="Immagine del personaggio">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const apiUrl = 'https://ringsdb.com/api/public/card/';
+
+           
+            const cardId = 01001;
+
+         
+            const characterNameElement = document.getElementById('characterName');
+            const characterImageElement = document.getElementById('characterImage');
+
+
+            fetch(`${apiUrl}${cardId}`)
+                .then(response => response.json())
+                .then(data => {
+        
+                    const characterName = data.name;
+                    const characterImageUrl = data.imagesrc;
+
+
+                    characterNameElement.textContent = characterName;
+                    characterImageElement.src = characterImageUrl;
+                })
+                .catch(error => {
+                    console.error('Errore durante il recupero della carta:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>

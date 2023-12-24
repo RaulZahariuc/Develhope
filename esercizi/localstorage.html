@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            gap: 16px;
+            margin-bottom: 16px
+        }
+    </style>
+</head>
+<body>
+    <h1>Il form di <span class="title-name"></span></h1>
+    <div class="form">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="email" placeholder="email">
+        <label for="firstname">Name</label>
+        <input type="text" name="firstname" class="firstname" placeholder="firstname">
+        <label for="lastname">Surname</label>
+        <input type="text" name="lastname" class="lastname" placeholder="lastname">
+    </div>
+    <button class="btn">Salva</button>
+    <p class="printedform"></p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            loadFormData();
+
+
+            document.querySelector('.btn').addEventListener('click', function() {
+
+                saveFormData();
+            });
+        });
+
+        function saveFormData() {
+
+            const email = document.querySelector('.email').value;
+            const firstname = document.querySelector('.firstname').value;
+            const lastname = document.querySelector('.lastname').value;
+
+
+            localStorage.setItem('email', email);
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('lastname', lastname);
+
+      
+            updateTitleName(firstname);
+
+
+            displayFormData();
+        }
+
+        function loadFormData() {
+
+            const email = localStorage.getItem('email');
+            const firstname = localStorage.getItem('firstname');
+            const lastname = localStorage.getItem('lastname');
+
+
+            if (firstname) {
+                updateTitleName(firstname);
+            }
+
+
+            displayFormData();
+        }
+
+        function displayFormData() {
+            const email = localStorage.getItem('email');
+            const firstname = localStorage.getItem('firstname');
+            const lastname = localStorage.getItem('lastname');
+
+
+            const printedForm = document.querySelector('.printedform');
+            printedForm.textContent = `Email: ${email}, Name: ${firstname}, Surname: ${lastname}`;
+        }
+
+        function updateTitleName(name) {
+            const titleName = document.querySelector('.title-name');
+            titleName.textContent = name;
+        }
+    </script>
+</body>
+</html>
+
+

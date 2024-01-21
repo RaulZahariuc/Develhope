@@ -4,9 +4,6 @@ import Message from './Message';
        Answer : The Message component will be rendered directly within the App component
       */
 
-
-
-
 function Hello() {
   return (
     <div>

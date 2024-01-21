@@ -1,4 +1,4 @@
-const persons = [
+  const persons = [
     {
       id: 1,
       firstName: 'Mario',

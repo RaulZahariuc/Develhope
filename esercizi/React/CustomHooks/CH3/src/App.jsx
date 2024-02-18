@@ -1,13 +1,17 @@
-
 import React from 'react';
-import GithubUser from './GithubUser';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { SWRConfig } from 'swr';
+import Routes from './Routes';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const App = () => {
   return (
-    <div>
-      <h1>Github User Information</h1>
-      <GithubUser username="octocat" />
-    </div>
+    <Router>
+      <SWRConfig value={{ fetcher }}>
+        <Routes />
+      </SWRConfig>
+    </Router>
   );
 };
 

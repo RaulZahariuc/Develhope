@@ -1,26 +1,43 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Welcome from './Welcome';
+import Counter from './Counter';
+import ShowGithubUser from './ShowGithubUser';
+import Routes from './Routes';
+import NotFound from './NotFound';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      {/* Render Welcome component with name and age props */}
-      <Welcome name="John" age={25} />
+    <Router>
+      <div>
 
-      {/* 
-        What happens if no name and age props are passed:
-        The Welcome component will use the default values ('Guest' for name and null for age).
-      */}
-      
-      {/* Render Welcome component without name and age props */}
-      <Welcome />
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/counter">Counter</Link>
+            </li>
+        
+            <li>
+              <Link to="/users/octocat">Show Github User</Link>
+            </li>
+          </ul>
+        </nav>
 
-      {/* Additional content or components can be added here as needed */}
-    </div>
+        <Switch>
+          <Routes />
+          <Route exact path="/" render={() => <Welcome name="Your Name" />} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
+
 
 
 

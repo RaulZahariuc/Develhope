@@ -1,52 +1,78 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
-
-export function Login(){
-    const [data, setData] = useState ({ 
-        username: "",
-        password: "",
-        checkbox: false,
-    })
+export function Login({ onLogin }) {
+  const [data, setData] = useState({
+    username: '',
+    password: '',
+    rememberMe: false,
+  });
 
   function handleData(e) {
-    const name = e.target.name 
-    const value = e.target.value
-    const checked = e.target.checked
-    const type = e.target.type
+    const { name, value, checked, type } = e.target;
 
-    setData((data) => {
-      return { 
-        ...data,
-        [name]: type == "checkbox" ? checked : value
-      };
+    setData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  }
+
+  function handleLoginButton() {
+    // Assuming `onLogin` is a function passed as a prop
+    if (onLogin) {
+      onLogin(data);
+    }
+  }
+
+  function handleReset() {
+    setData({
+      username: '',
+      password: '',
+      rememberMe: false,
     });
   }
 
-  function handleLoginButton(e){
-    e.preventDefault(); 
-    onLogin(data) 
+  function handleSubmit(event) {
+    event.preventDefault();
+    handleLoginButton(); 
   }
 
-   //we have to put Prevent Default since is a form, the instance i click the log-in button
-   // the page refreshes and to stop the refresh to happend every time we do something 
-   // we usa "preventDefault"
+  const { username, password, rememberMe } = data;
+  const disabled = username === '' || password === '';
 
-  function handleResetButton (){
-    setData ({
-        username: '',
-        password: '',
-        checkbox: false,
-    })
-  }
- 
   return (
     <div>
-      <h1> My Form: </h1>
-      <input type = "text" name="userName" value={data.userName} onChange={handleData} placeholder="username" />
-      <input type="password" name="password" value={data.password} onChange={handleData} placeholder="password" />
-      <input type="checkbox" name="rememberMe" value={data.checkBox} onChange={handleData} />
-      <button onClick={handleLoginButton}> Login </button>
-      <button onClick={handleResetButton}> Reset </button>
+      <h1>My Form:</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleData}
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleData}
+          placeholder="Password"
+        />
+        <label>
+          Remember me:
+          <input
+            type="checkbox"
+            name="rememberMe"
+            checked={rememberMe}
+            onChange={handleData}
+          />
+        </label>
+        <button type="submit" disabled={disabled}>
+          Login
+        </button>
+        <button type="button" onClick={handleReset}>
+          Reset
+        </button>
+      </form>
     </div>
   );
 }

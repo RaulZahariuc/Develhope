@@ -1,42 +1,21 @@
 import React from 'react';
+import Color from './Color';
 
-class UncontrolledLogin extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.usernameInput = React.createRef();
-    this.passwordInput = React.createRef();
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const username = this.usernameInput.current.value;
-    const password = this.passwordInput.current.value;
-    console.log("Username:", username);
-    console.log("Password:", password);
-   
-  }
-
+class Colors extends React.Component {
   render() {
+    const { colors } = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label>
-            Username:
-            <input type="text" ref={this.usernameInput} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password:
-            <input type="password" ref={this.passwordInput} />
-          </label>
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <div>
+        <h2>Colors:</h2>
+        <ul>
+          {colors.map((color) => (
+            <Color key={color.id} color={color} />
+          ))}
+        </ul>
+      </div>
     );
   }
 }
 
-export default UncontrolledLogin;
+export default Colors;
 

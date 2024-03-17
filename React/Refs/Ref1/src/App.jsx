@@ -1,12 +1,13 @@
-import { InteractiveWelcome } from './componenti/InteractiveWelcome'
-import './App.css'
-import UncontrolledLogin from './Componenti/UncontrolledLogin'
+import React from 'react';
+import FocusableInput from './FocusableInput';
 
-function App() { 
-  
+function App() {
   return (
-    <UncontrolledLogin/> 
-  )
+    <div>
+      <h1>Focusable Input Example</h1>
+      <FocusableInput />
+    </div>
+  );
 }
 
-export default App
+export default App;

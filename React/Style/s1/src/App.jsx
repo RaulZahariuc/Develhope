@@ -1,16 +1,13 @@
 import React from 'react';
-import Hello from './Hello';
- /* 
-What happens when we use the Hello component multiple times: for each instance of the Hello component will be rendered in different instances.
-*/
+import ReactDOM from 'react-dom';
+import './index.css'; 
+import App from './App';
 
-function App() {
-  return (
-    <div>
-      <Hello />
-    </div>
-  );
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-export default App;
 

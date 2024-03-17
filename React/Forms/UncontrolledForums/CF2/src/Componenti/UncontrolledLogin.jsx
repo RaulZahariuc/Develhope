@@ -1,17 +1,34 @@
-import { useState } from "react"; 
-import { Welcome } from "./Welcome"; 
+import React from 'react';
 
-export function InteractiveWelcome() { 
-    const [username, setUsername] = useState("") 
-   
-    function handleUserName(e) {
-        const user = e.target.value
-        setUsername(user) 
-    }
-    return(
+class UncontrolledLogin extends React.Component {
+  handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const username = formData.get('username');
+    const password = formData.get('password');
+    console.log("Username:", username);
+    console.log("Password:", password);
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
         <div>
-            <input value={username} onChange={handleUserName} />
-            <Welcome name={username}/>
+          <label>
+            Username:
+            <input type="text" name="username" />
+          </label>
         </div>
-    )
+        <div>
+          <label>
+            Password:
+            <input type="password" name="password" />
+          </label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    );
+  }
 }
+
+export default UncontrolledLogin;

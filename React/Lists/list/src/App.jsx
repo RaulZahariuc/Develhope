@@ -1,12 +1,13 @@
-import { InteractiveWelcome } from './componenti/InteractiveWelcome'
-import './App.css'
-import UncontrolledLogin from './Componenti/UncontrolledLogin'
+import React from 'react';
+import Colors from './Componenti/Colors';
 
-function App() { 
-  
+
+function App() {
   return (
-    <UncontrolledLogin/> 
-  )
+    <div>
+      <Colors/>
+    </div>
+  );
 }
 
-export default App
+export default App;

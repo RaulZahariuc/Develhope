@@ -1,12 +1,13 @@
-import { InteractiveWelcome } from './componenti/InteractiveWelcome'
-import './App.css'
-import UncontrolledLogin from './Componenti/UncontrolledLogin'
+import React from 'react';
+import TodoList from './Componenti/TodoList';
 
-function App() { 
-  
+
+function App() {
   return (
-    <UncontrolledLogin/> 
-  )
+    <div>
+      <TodoList/>
+    </div>
+  );
 }
 
-export default App
+export default App;
